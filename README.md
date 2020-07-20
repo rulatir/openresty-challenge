@@ -4,11 +4,13 @@ An honest attempt at a Docker image that follows
 [Paul Kulchenko's tutorial](http://notebook.kulchenko.com/zerobrane/debugging-openresty-nginx-lua-scripts-with-zerobrane-studio)
 as closely as possible.
 
-To run the container:
+Run the container:
 
 ```bash
 docker-compose up
 ```
+
+Then visit http://localhost:8910/hellolua.
 
 To dump logs (while container is up and running):
 
