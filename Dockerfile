@@ -27,3 +27,7 @@ RUN mkdir -p /var/log/nginx && cd /var/log/nginx && touch access.log error.log
 COPY ./nginx.conf $NGXDIR/conf/nginx.conf
 COPY ./logging.nginx $NGXDIR/conf/logging.nginx
 COPY ./lua $NGXDIR/lua
+
+# patch mobdebug
+COPY ./2020-challenge.patch /tmp/2020-challenge.patch
+RUN patch $ZBS/lualibs/mobdebug/mobdebug.lua /tmp/2020-challenge.patch && rm /tmp/2020-challenge.patch
