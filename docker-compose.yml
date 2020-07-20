@@ -1,0 +1,16 @@
+version: '3.7'
+
+networks:
+  challenge:
+
+services:
+  challenge:
+    build: .
+    image: 'openresty-challenge'
+    ports:
+      - "8910:80"
+    networks:
+      - challenge
+    volumes:
+      - "./lua:/usr/local/openresty/nginx/lua"
+      - "./nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf"
