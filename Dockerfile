@@ -31,3 +31,7 @@ COPY ./lua $NGXDIR/lua
 # patch mobdebug
 COPY ./2020-challenge.patch /tmp/2020-challenge.patch
 RUN patch $ZBS/lualibs/mobdebug/mobdebug.lua /tmp/2020-challenge.patch && rm /tmp/2020-challenge.patch
+
+# copy the CLI wrapper
+COPY ./usr-local-bin/resty-cli-wrapper.sh /usr/local/bin/resty-cli-wrapper.sh
+RUN chmod a+x /usr/local/bin/resty-cli-wrapper.sh
